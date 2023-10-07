@@ -1,20 +1,28 @@
 class A:
-    def __init__(self):
+    def first_function(self):
         print("First")
 
 class B(A):
-     def __init__(self):
-        print("second")
+     def second_function(self):
+        print("Second")
+
 class C(B):
-     def __init__(self):
-        print("third")
+     def third_function(self):
+        print("Third")
+        super(C, self).first_function()
 
 class D(B):
-     def __init__(self):
-        print("fourth")
+     def fourth_function(self):
+        print("Fourth")
 
-class E(C,D):
-   def __init__(self):
-        super(Fourth, self).__init__()
-        print("that's it")
+class E(C, D):
+   def fifth_function(self):
+        print("That's it")
 
+
+e = E()
+e.first_function()
+e.second_function()
+e.third_function()
+e.fourth_function()
+e.fifth_function()
